@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo - Nintex Project</title>
+</head>
+
+<header>
+    <p> Welcome to Schema Advisor Demo
+        <br>
+        ------------------------------------------
+    </p>
+</header>
+
+<body>
+    <form method="POST" action="{% url 'check' %}">
+        {% csrf_token %}
+        <label for="source">Source Format:</label>
+        <select name="source" id="source">
+            <option>CSV</option>
+            <option>AirTable</option>
+        </select>
+        <br><br>
+        
+        <label for="target">Target Format:</label>
+        <select name="target" id="target">
+            <option>AirTable</option>
+            <option>CSV</option>
+        </select>
+        <br><br>
+
+        <label for="file_path">File Path:</label>
+        <input type="text" id="file_path" name="file_path">
+        <br><br>
+        
+        <label for="api_key">API key:</label>
+        <input type="text" id="api_key" name="api_key" value="key4mzHT0jC7Ef44j">
+        <br><br>
+        
+        <label for="base_id">Base ID:</label>
+        <input type="text" id="base_id" name="base_id" value="appbL34vP8sp0vTRT">
+        <br><br>
+        
+        <label for="table_name">Table Name:</label>
+        <input type="text" id="table_name" name="table_name">
+        <br><br>
+        
+        <input type="submit" value="convert"></input>
+
+        <p> {{result}} </p>
+
+    </form>
+</body>
+
+</html>
